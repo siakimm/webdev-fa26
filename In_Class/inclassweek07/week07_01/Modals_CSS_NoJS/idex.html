@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Modal CSS|no JS</title>
+    <style>
+    *{
+      box-sizing: border-box;
+    }
+    body{
+        margin: 0;
+    }
+
+    a.button{
+        text-decoration: none;
+        color: white;
+        background-color: blueviolet;
+        padding: 1rem 2rem;
+        border-radius: 0.75rem;
+        display: inline-block;
+    }
+/*modal styles*/
+    .info_modal{
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0,0,0,0.3);
+        z-index: 99999999999;
+        /*opacity: 0;*/
+        transition: opacity 400ms ease-in;
+        pointer-events: none;
+    }
+
+    .info_modal:target{
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .center{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .info_modal > div{
+        background-color: white;
+        width: 600px;
+        height: 600px;
+        padding: 2rem;
+        border-radius: 0.75rem;
+        position: relative;
+    }
+
+    .close{
+        height: 20px;
+        width: 20px;
+        background-color: antiqueWhite;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    </style>
+  </head>
+
+  <body>
+    <a href="#info" class="button">Open Modal 1</a>
+    <a href="#info_2" class="button">Open Modal 2</a>
+<!--normal content here-->
+
+    <!--modals at the end of file so we dont get-->
+    <!--modal 1--> 
+    <div id="info" class="info_modal center">
+      <div>
+        <a href="#close" class="close">X</a>
+        <h1>Hello Modal 1</h1>
+        <p>This is our CSS only modal</p>
+      </div>
+    </div>
+    <!--end of modal 1-->
+
+    <!--modal 2--> 
+    <div id="info_2" class="info_modal center">
+      <div>
+        <a href="#close" class="close">X</a>
+        <h1>Hello Modal 2</h1>
+        <p>This is our second CSS only modal</p>
+      </div>
+    </div>
+    <!--end of modal 2-->
+</body>
+</html>

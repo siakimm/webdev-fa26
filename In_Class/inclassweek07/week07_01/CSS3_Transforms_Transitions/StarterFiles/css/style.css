@@ -1,0 +1,170 @@
+/* load the font first so we can use it in our style sheet */
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+/* how we apply the custom font */
+/* font-family: "Kaushan Script", cursive; */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* add our custom font as the default font for the page */
+html {
+  font-family: 'Kaushan Script', cursive;
+  /* declare and use a full size image BG */
+  background: url('../img/bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+header{
+  width: 80%;
+  padding: 0 10px;
+  height: 50px;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color:grey;
+  z-index: 100;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1{
+  color: #333;
+}
+
+nav ul{
+  display: flex;
+  list-style-type: none;
+  text-align: right;
+  background-color: rgba(40, 40, 40, 0.5);
+}
+
+nav li{
+  font-size: 18px;
+  height: 50px;
+  line-height: 50px;
+  width: 120px;
+}
+
+nav a{
+  text-decoration: none;
+  color:#fff;
+  display: block;
+  transition: all 1s;
+
+}
+
+nav a:hover{
+  background-color: rgba(40, 40, 40, 0.7);
+  color: red;
+}
+
+nav a.active{
+  background-color: black;
+  color: yellow;
+}
+
+.container {
+  width: 900px;
+  margin: 0 auto;
+  padding-top: 100px;
+  font-size: 0;
+}
+
+.polaroid {
+  width: 260px;
+  margin: 20px;
+  display: inline-block;
+  position: relative;
+}
+
+.polaroid img {
+  width: 100%;
+  height: auto;
+  /* add a uniform border all around */
+  border: 10px solid #ccc;
+  border-bottom-width: 45px;
+}
+
+.polaroid p {
+  /* 1rem = 16px, so 0.5rem is 8px, 2rem is 32px */
+  font-size: 1rem;
+  position: absolute;
+  bottom: 10px;
+  width: 280px;
+  text-align: center;
+}
+
+.scale_up {
+  transform: scale(1.2);
+  z-index: 10;
+
+}
+
+.scale_x {
+  transform: scale(2,1);
+}
+
+.scale_y {
+  transform: scaleY(2);
+}
+
+.skew_x {
+  transform: skewX(-20deg);
+}
+
+.skew_y {
+  transform: skewY(-20deg);
+}
+
+.skew_both{
+  transform: skew(10deg, 30deg);
+}
+
+.rot_x{
+  transform: rotateX(120deg);
+}
+
+.rot_y{
+  transform: rotateY(120deg);
+}
+
+.rot_z{
+  transform: rotateZ(120deg);
+}
+
+.rotate_left{
+  transform: rotate(-20deg);
+  transition: all 5s ease;
+}
+
+.rotate_right{
+  transform: rotate(20deg);
+  transition: all 5s ease;
+}
+
+.rotate_left:hover{
+  transform: rotate(20deg);
+}
+
+.rotate_right:hover{
+  transform: rotate(-20deg);
+}
+
+.skew_hover{
+  transform: skewX(30deg);
+}
+
+.skew_hover:hover{
+  transform: skewX(-30deg);
+}
+
+.color_swap{
+  filter: grayscale(100%);
+  
+}
