@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root{
+--c-bg: #e2e8f0;
+--c-text: #475569;
+--c-bg-btn: #1e293b;
+--c-bg-btn-hover: #64748b;
+--c-btn-text: #f8fafc;
+
+--ff-heading: 'Press Start 2P', system-ui;
+--ff-body: 'Share Tech Mono', monospace;
+}
+
+#green {
+  --c-bg: #a7f3d0;
+  --c-text: #065f46;
+  --c-bg-btn: #059669;
+  --c-bg-btn-hover: #065f46;
+  --c-btn-text: #ecfdf5;
+}
+
+#blue {
+  --c-bg: #1e3a8a;
+  --c-text: #dbeafe;
+  --c-bg-btn: #3b82f6;
+  --c-bg-btn-hover: #1d4ed8;
+  --c-btn-text: #eff6ff;
+}
+
+
