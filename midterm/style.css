@@ -1,0 +1,447 @@
+/* SIA KIM PORTFOLIO
+   Edit colors in :root. Section rules follow the order of index.html.
+   Most rules use class topics: box model, fonts, Flexbox, Grid, and media queries.
+   Two extra topics are explained near the bottom: viewport sizing and scroll snapping.
+*/
+:root {
+  --paper: #fcf8f8;
+  --pink: #f45e9e;
+  --line: #facbdc;
+  --text: #a53061;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 81px;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus-visible, summary:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 6px;
+}
+
+.site-header {
+  height: 81px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+
+.identity {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  padding: 16px 4%;
+  color: var(--pink);
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: .6px;
+  line-height: 1.15;
+}
+
+nav {
+  display: flex;
+}
+
+nav a {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  padding: 20px 35px;
+  border-left: 1px solid var(--line);
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  background: #ffe8f1;
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 65px 9% 75px;
+  text-align: center;
+}
+
+h1 {
+  font-family: Georgia, serif;
+  font-size: 120px;
+  font-style: italic;
+  font-weight: normal;
+  line-height: 1.07;
+  letter-spacing: -6px;
+  color: var(--pink);
+  margin: 0 0 42px;
+}
+
+.hero-description, .section-label, .project-meta, .draft-note, footer p {
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.hero-description {
+  margin: 0 0 35px;
+}
+
+.work-grid {
+  align-content: center;
+  margin: 0 4%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.project {
+  min-width: 0;
+  padding: 32px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.project-wide {
+  grid-column: 1 / -1;
+}
+
+.project-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.project h2 {
+  font-family: Georgia, serif;
+  font-size: 45px;
+  font-style: italic;
+  font-weight: normal;
+  line-height: 1.1;
+  color: var(--pink);
+  margin: 23px 0 17px;
+  letter-spacing: -1.5px;
+}
+
+.tags {
+  padding-top: 18px;
+  margin: 0;
+  border-top: 1px solid var(--line);
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 1.7;
+}
+
+details {
+  margin-top: 22px;
+}
+
+summary {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  font-size: 11px;
+  padding: 8px 0;
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary span {
+  font-size: 18px;
+}
+
+details[open] summary span {
+  transform: rotate(45deg);
+}
+
+details div {
+  max-width: 660px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #624b55;
+}
+
+.about {
+  align-content: center;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+  margin: 0 4%;
+  padding: 110px 32px;
+  border-bottom: 1px solid var(--line);
+}
+
+.about h2, .section-heading h2 {
+  font-family: Georgia, serif;
+  font-size: 58px;
+  font-style: italic;
+  font-weight: normal;
+  line-height: 1.1;
+  color: var(--pink);
+  margin: 0 0 30px;
+  letter-spacing: -2px;
+}
+
+.about div > p {
+  max-width: 550px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #624b55;
+}
+
+.resume {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 4%;
+  padding: 70px 32px;
+  border-bottom: 1px solid var(--line);
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: baseline;
+}
+
+.resume-row {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr auto;
+  gap: 28px;
+  align-items: baseline;
+  padding: 25px 0;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.resume-row h3 {
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.resume-row p {
+  margin: 0;
+}
+
+.draft-note {
+  margin-top: 30px;
+  font-size: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 85px 20px 65px;
+}
+
+footer p {
+  font-size: 10px;
+}
+
+footer a {
+  display: inline-block;
+  margin-top: 28px;
+  font-family: Georgia, serif;
+  font-size: 55px;
+  font-style: italic;
+  color: var(--pink);
+}
+
+footer a span {
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  margin-left: 15px;
+}
+
+
+/* EXTRA TOPIC 1 — PRESENTATION NOTES: Full-screen section sizing
+
+   Purpose: Give each section enough space to feel like its own page.
+   main > section selects sections directly inside the main element.
+   100vh is the browser viewport's height.
+   calc() subtracts the 81px navigation height from that height.
+   min-height sets a minimum, so longer content can still expand.
+   The mobile media query below uses 63px because its menu is shorter.
+
+   Example: In an 800px-tall viewport, the minimum is 800 - 81 = 719px.
+   Try explaining: Why use min-height instead of height?
+   Answer: A fixed height could leave long content overflowing its section.
+
+   Presentation: Explain this in your own words after trying it in the browser.
+   These notes describe the code; they do not claim a tutorial or authorship.
+*/
+main > section {
+  min-height: calc(100vh - 81px);
+}
+
+
+/* EXTRA TOPIC 2 — PRESENTATION NOTES: Scroll snapping
+
+   Purpose: Make scrolling settle at section boundaries.
+   On html, y means the vertical direction and mandatory requires snapping.
+   scroll-snap-align: start makes each section's top a snap position.
+   scroll-padding-top above leaves space for the sticky navigation.
+   scroll-snap-stop: always prevents a scrolling gesture from skipping
+   over these snap positions. It does not animate or time the scroll.
+   The footer uses end so its bottom can line up with the viewport bottom.
+   The reduced-motion media query below turns snapping off.
+
+   Demo: Scroll between Home, Work, About, and Resume.
+   Try explaining: Which rule chooses the direction, and which chooses
+   the point on each section where scrolling settles?
+   Answer: scroll-snap-type chooses the direction; scroll-snap-align
+   chooses the alignment point.
+
+   Present this only after you can explain and demonstrate the behavior.
+*/
+html {
+  scroll-snap-type: y mandatory;
+}
+
+main > section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+footer {
+  scroll-snap-align: end;
+}
+
+
+/* Responsive design,resize the browser across 768px and watch the project grid change. */
+@media (max-width: 768px) {
+  .site-header {
+    height: 63px;
+  }
+
+  main > section {
+    min-height: calc(100vh - 63px);
+  }
+
+  html {
+    scroll-padding-top: 63px;
+  }
+
+  .identity {
+    padding: 13px 16px;
+    gap: 12px;
+    font-size: 8px;
+  }
+
+  nav a {
+    padding: 16px 12px;
+    font-size: 10px;
+  }
+
+  .hero {
+    padding: 65px 25px;
+  }
+
+  h1 {
+    font-size: 63px;
+    letter-spacing: -3px;
+    margin-bottom: 28px;
+  }
+
+  .hero-description {
+    max-width: 280px;
+    font-size: 10px;
+  }
+
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project {
+    padding: 21px;
+  }
+
+  .project-wide {
+    grid-column: auto;
+  }
+
+  .project-meta {
+    font-size: 9px;
+    margin-bottom: 18px;
+  }
+
+  .project h2 {
+    font-size: 37px;
+  }
+
+  .tags {
+    font-size: 9px;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+    padding: 65px 21px;
+    gap: 20px;
+  }
+
+  .about div > p {
+    font-size: 14px;
+  }
+
+  .resume {
+    padding: 50px 21px;
+  }
+
+  .section-heading {
+    display: block;
+  }
+
+  .section-heading h2 {
+    font-size: 39px;
+    margin-top: 20px;
+  }
+
+  .resume-row {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+
+  footer {
+    padding: 60px 20px;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+    scroll-snap-type: none;
+  }
+
+}
+
