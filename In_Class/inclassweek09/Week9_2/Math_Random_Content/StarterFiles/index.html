@@ -8,35 +8,33 @@
   </head>
 
   <body>
-    <!-- Where Tuesday ended, plus one new empty element: the lineup list.
-         If you kept your own file from Tuesday, use that one instead and just
-         copy the <section class="lineup-wrap"> block below into it. -->
+    <!-- The markup and the CSS are done. Every empty element below has an id,
+         and by the end of class JavaScript will have filled all of them in. -->
 
     <article class="ticket">
       <header class="poster">
         <p class="presents">The Fillmore East presents</p>
-        <h1 class="billing" id="billing"></h1>
+        <h1 class="billing" id="billing">THIS IS INNER INTL </h1>
         <p class="where-when" id="where-when"></p>
       </header>
 
-      <p class="status" id="status"></p>
+      <p class="status" id="status">STATUS</p>
 
       <section class="order">
         <h2>Your order</h2>
 
-        <p class="line" id="price-line"></p>
-        <p class="line" id="fee-line"></p>
-        <p class="line discount" id="discount-line"></p>
+        <p class="line" id="price-line">priceLine</p>
+        <p class="line" id="fee-line">feeLine</p>
+        <p class="line discount" id="discount-line">discountLine</p>
 
         <p class="total">
           <span>Total</span>
           <strong id="total"></strong>
         </p>
 
-        <p class="fine-print" id="fine-print"></p>
+        <p class="fine-print" id="fine-print">finePrint</p>
       </section>
 
-      <!-- NEW today -->
       <section class="lineup-wrap">
         <h2>Running order</h2>
         <ul class="lineup" id="lineup"></ul>
@@ -44,59 +42,274 @@
       </section>
     </article>
 
+    <!-- The script goes at the END of the body, after the elements it talks
+         to. Put it in the <head> and it runs before they exist. -->
     <script>
-      /* ---------- Tuesday's code, so nobody is stuck ----------
-         Everything below is where we finished last class. Today we replace
-         the hard-coded facts at the top with randomly chosen ones. */
+      // var myVarName;
+      // var myOtherVar = "Sia"
 
-      const headliner = 'Bad Moon Rising'
-      const support = 'The Paper Cuts'
-      const venue = 'The Fillmore East'
-      const doors = 'Fri 13 Nov, doors 8pm'
+      // these are lets now bec they are getting reassigned down below with our random content picker
+      let headliner = 'Bad Moon Rising' //string 
+      let support = 'The Paper Cuts' //string
+      let venue = 'The Fillmore East' //string
+      let doors = 'Friday 13 Nov, doors 8:00pm' //string
 
-      const ticketPrice = 18.5
-      const capacity = 250
-      const ticketsSold = 243
-      const serviceFeeRate = 0.12
-      const studentPrice = 5
+      let ticketPrice = 18.5 //number, a float bec decimal point
+      let capacity = 250 //number, an integer, a whole number
+      let ticketsSold = 243 //number, an integer, a whole number
+      let serviceRateFee = 0.12 //number, 12% 
+      let studentPrice = 5 //number, dollar discount
 
-      const isStudent = true
-      let quantity = 3
+      const isStudent = true //boolean, true or false
+      
+      // one value that changes, so its a let
+      let quantity = 3 
 
-      const ticketsLeft = capacity - ticketsSold
-      const isSoldOut = ticketsLeft === 0
-      const isAlmostSoldOut = ticketsLeft < 10
+      /* ---------- Thursday code in class 10/29/2026 ---------- */
+     
+      /* =====================================
+      1. Arrays - one variable holding a list of values
+      Square brackets [] hold the values, separated by commas
+      ====================================== */
 
-      const subtotal = ticketPrice * quantity
-      const serviceFee = subtotal * serviceFeeRate
-      const discount = isStudent ? studentPrice : 0
-      const total = subtotal + serviceFee - discount
+      const headliners = [
+        'Bad Moon Rising', 
+        'Velvet Static', 
+        'Dial Tone', 
+        'Mountain Time', 
+        'Kerosene Club', 
+        'The Paper Cuts'
+      ]
 
-      const billing = `${headliner.toUpperCase()} + ${support}`
-      const whereWhen = `${venue} · ${doors}`
+      const supports = [
+        'Low Ceiling', 
+        'The Ferry Lights', 
+        'Tiny Mirrors', 
+        'Garden State Radio'
+      ]
 
-      let status
+      const djs = [
+        'DJ Shortwave', 
+        'DJ Halfmoon', 
+        'DJ Ferry'
+      ]
 
-      if (isSoldOut) {
-        status = 'Sold out — join the waiting list'
-      } else if (isAlmostSoldOut) {
-        status = `Hurry — only ${ticketsLeft} tickets left`
-      } else {
-        status = 'Tickets available'
+      const venues = [
+        'The Fillmore East', 
+        'Rough Trade', 
+        'Brooklyn Steel', 
+        'Market Hotel'
+      ]
+
+      const nights = ['Thu 12 Nov', 'Fri 13 Nov', 'Sat 14 Nov']
+
+      const taglines = [
+        'Strickly 18+, No Re-Entry',
+        'Late set, Bring earplugs',
+        'All ages until 10PM',
+        'Sold out 3 times running',
+      ]
+
+      /* =====================================
+      2. Picking one at random 
+      Math.random () gives us a float from 0 up to (but not including) 1
+      Multiply by the length, floor it, and you get a valid index number
+      ====================================== */
+      /* =====================================
+      console.log(headliners.length) // gives us a count of item in the array
+      console.log(headliners[5]) // but computers start counting at 0, so the last index is 5 not 6
+      console.log(headliners[headliners.length - 1]) // if we dont know how many slots are in an array 
+      // the way to find the last one is to subtract -1 from array.length
+      ====================================== */
+
+      // console.log(Math.random())
+
+      // sometimes we want to pik between 0 and 1 for a true false situation 
+      function randomTrueFalse (){
+        // any variable declared inside of () is scoped 
+        // this var and its name and usability live and dies within this function
+
+        //Math.round(valueToRound)
+        const rn = Math.round (Math.random())
+        // this will work bec it is in the same scope as where it was defined 
+       // console.log(rn)
+        // if we want a function to give us a value to use elsewhere 
+        // (like assign it to a variable ot math equation we have to rtuen that data/var)
+        return rn
       }
 
-      document.querySelector('#billing').textContent = billing
-      document.querySelector('#where-when').textContent = whereWhen
-      document.querySelector('#status').textContent = status
-      document.querySelector('#price-line').textContent = `${quantity} × $${ticketPrice.toFixed(2)}  —  $${subtotal.toFixed(2)}`
-      document.querySelector('#fee-line').textContent = `Service fee  —  $${serviceFee.toFixed(2)}`
-      document.querySelector('#discount-line').textContent = isStudent
-        ? `Student discount  —  −$${discount.toFixed(2)}`
-        : ''
-      document.querySelector('#total').textContent = `$${total.toFixed(2)}`
-      document.querySelector('#fine-print').textContent = `All sales final. ${ticketsLeft} of ${capacity} tickets remaining.`
+      // console.log(randomTrueFalse())
+      // to call the function 
+      // this log is undefined bec (rn) is scoped and not global 
+      // so it doesn't exist outside of funtion {}
+      // console.log (rn)
+      let isOn // declared but never initialized/assigned a vlaue this is why we use let
+      const randomValue = randomTrueFalse ()
 
-      /* ---------- Today's code goes below this line ---------- */
+      if (randomValue === 1){
+        isOn = true 
+      } else {
+        isOn = false
+      }
+
+      /* when checking TF, it could be 0 or 1, it could also be that variable HAS a value or it doesnt 
+      if (randomValue){
+        console.log('true')
+          
+        }else {
+          console.log('false')
+        }
+      */
+     // console.log(isOn)
+
+      // another helper function to get a random number between 0 and x 
+      // we know 
+      function randNumToMax(max){
+        // first we multiply our random float by the max, then we either round it, ceil it, or floor it
+        // ceil always rounds up 
+        // floor always rounds down (just drops the decimal all together)
+        const rn = Math.floor(Math.random() * max)
+      // console.log(rn)
+      return rn
+      } 
+      
+      // randNumToMax(33)
+      // we use the 0-max random function combined with Array.length
+      // to get a random index/value out of an array
+      // console.log(headliners.length)
+      const randIndex = randNumToMax(headliners.length)
+      console.log(headliners[randIndex])
+
+      // passes in an array as our first ARG or PARAM
+      // use the length for a random number between 0 and the last slot in our array
+      // return the value at that random number/index
+      function pickRandom(list) {
+        const index = Math.floor(Math.random() * list.length)
+        return list[index]
+      }
+
+      // this is how we will populte random content
+      /*
+      console.log(pickRandom(headliners))
+      console.log(pickRandom(supports))
+      */
+
+      headliner = pickRandom(headliners)
+      support = pickRandom(supports)
+      venue = pickRandom(venues)
+      doors = `${pickRandom(nights)}, doors 8pm`
+
+      // a price between 12 and 45, first we need a randomBetween(min,max)
+
+      function randomBetween(min,max){
+        return Math.floor(Math.random () * (max - min + 1)) + min
+      }
+
+      ticketPrice = randomBetween(12, 45) + 0.5
+      capacity = randomBetween(120, 400)
+      ticketsSold = randomBetween(capacity - 25, capacity)
+      quantity = randomBetween(1, 4)
+
+      /* ---------- Tuesday code in class 10/27/2026 ---------- */
+      /* ===================================== 
+      2. Booleans we work out rather then type
+      comparison is a boolean, no need to do it ourselves 
+      ====================================== */
+
+      const ticketsLeft = capacity - ticketsSold //number 7 
+      // console.log(ticketsLeft)
+      const soldOut = ticketsLeft === 0 //false
+      const isAlmostSoldOut = ticketsLeft < 10 //true
+
+      /* ===================================== 
+      3. The Money
+      each line will build on the one above it 
+      ====================================== */
+
+      const subTotal = ticketPrice * quantity // 55.5
+      //comsole.log(subTotal)
+      const serviceFee = subTotal * serviceRateFee // 6.66
+      // discount is a boolean, its value is computed with a termary which is a conditional statement
+      // if isStudent is true then the value of discount is studentPrice, if not then its 0
+    // === is deep equals, this checks the vlaue and the data type 
+    // == check the value but doesnt care about the data type
+    // if (itsStudent === true) - will be true for 1, 'true'
+    /* 
+    if (isStudent === true) {
+        discount = studentPrice;
+      } else {
+        discount = 0
+    }*/
+
+    // termary condition ? what to assign/do if true : what to assign/do if false
+      const discount = isStudent ? studentPrice : 0 // 5
+      const total = subTotal + serviceFee - discount // 57.16
+
+      /* =====================================
+      4. The Text
+      backticks ` let us drop a variable value straight into a sentence with ${}
+      single ' ' or double " " quotes allow this 
+      TEMPLATE LITERALS
+      ====================================== */
+
+      const supportName = support || 'support TBA' //this catches an empty string or empty/nonexistent variable and assigns a default value
+      const billing = `${headliner.toUpperCase()} * ${supportName}` // template strings 
+      const whereWhen = `${venue} • ${doors}` //template strings
+      // console.log(billing, whereWhen)
+
+      const priceLine = `${quantity} tickets x $${ticketPrice.toFixed(2)}`
+      console.log (priceLine)
+
+      const feeLine = `Service fee - $${serviceFee.toFixed(2)}`
+      const discountLine = isStudent 
+      ? `Student discount - $${discount.toFixed(2)}` 
+      : ''
+
+      const totalLine = `$${total.toFixed(2)}`
+
+      /* =====================================
+      5. Choosing a Message
+      if/ else if /else -- the first true branch wins and the rest are skipped 
+      If none are true, the else branch runs
+      ====================================== */
+
+      let status // this is a let bec we dont immediately know what the value will be, it will be determined by the if/else if/else below
+
+      if (soldOut) {
+        status = 'Sold out - join the waitlist'
+      } else if (isAlmostSoldOut) {
+        status = `Hurry! Only ${ticketsLeft} tickets left.`
+      } else {
+        status = 'Tickets available.'
+      }
+
+      const idLine = isStudent ? 'Student ID required at the door.' : ''
+      const finePrint = `All sales final. ${idLine} ${ticketsLeft} of ${capacity} tickets remaining.`
+
+  /* =====================================
+      6. Putting it on the Page 
+      One line borrowed from next week: find and element by it's selector (ID) 
+      and change its text content to the value of a variable
+      ====================================== */
+
+      document.querySelector('#billing').textContent = billing
+      // console.log(document.querySelector('where-when'))
+      document.querySelector('#where-when').textContent = whereWhen
+      // document.querySelector('#id-line').textContent = idLine
+      // status 
+      document.querySelector('#status').textContent = status
+      // priceLine
+      document.querySelector('#price-line').textContent = priceLine
+      // feeLine
+      document.querySelector('#fee-line').textContent = feeLine
+      // discountLine
+      document.querySelector('#discount-line').textContent = discountLine
+      // total
+      document.querySelector('#total').textContent = totalLine
+      // finePrint
+      document.querySelector('#fine-print').textContent = finePrint
+
+
     </script>
   </body>
 </html>

@@ -34,6 +34,12 @@
 
         <p class="fine-print" id="fine-print">finePrint</p>
       </section>
+
+      <section class="lineup-wrap">
+        <h2>Running order</h2>
+        <ul class="lineup" id="lineup"></ul>
+        <p class="tagline" id="tagline"></p>
+      </section>
     </article>
 
     <!-- The script goes at the END of the body, after the elements it talks
@@ -54,9 +60,9 @@
       const studentPrice = 5 //number, dollar discount
 
       const isStudent = true //boolean, true or false
-
+      
       // one value that changes, so its a let
-      const quantity = 3 
+      let quantity = 3 
 
       /* ===================================== 
       2. Booleans we work out rather then type
@@ -134,7 +140,6 @@
       const finePrint = `All sales final. ${idLine} ${ticketsLeft} of ${capacity} tickets remaining.`
 
 
-
       /* =====================================
       6. Putting it on the Page
       One line borrowed from next week: find and element by it's selector (ID) 
@@ -157,6 +162,8 @@
       document.querySelector('#total').textContent = totalLine
       // finePrint
       document.querySelector('#fine-print').textContent = finePrint
+
+
     </script>
   </body>
 </html>
