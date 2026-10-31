@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Sia Kim's collection of graphic design, photography, artwork, and interactive projects.">
+    <meta name="theme-color" content="#fcf8f8">
+    <title>Drawings — Sia Kim</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="../script.js" defer>
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">
+      Skip to content
+    </a>
+    <header class="site-header">
+      <a class="identity" href="../index.html">
+        SIA KIM
+        <span>PORTFOLIO</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="../index.html#work">
+          Work
+        </a>
+        <a href="../info.html">
+          Info
+        </a>
+        <a href="../experience.html">
+          Experience
+        </a>
+      </nav>
+    </header>
+    <main id="main" class="project-page">
+      <a class="back-link" href="../index.html#work">
+        ← All work
+      </a>
+      <section class="project-intro" aria-labelledby="project-title">
+        <p class="eyebrow">Personal work / Drawings</p>
+        <h1 id="project-title">Drawings</h1>
+        <p class="project-description">A few drawings I made in my free time.</p>
+      </section>
+      <section class="project-section" aria-label="Artwork">
+        <div class="gallery poster-gallery">
+          <figure>
+            <a class="zoom-link" href="../assets/interior-study-1.webp" data-caption="Interior study · drawing" aria-label="Enlarge: Interior study · drawing">
+              <img class="" src="../assets/interior-study-1.webp" alt="Interior study · drawing" width="1190" height="1684" loading="lazy">
+              <span class="zoom-indicator" aria-hidden="true">↗</span>
+            </a>
+          </figure>
+          <figure>
+            <a class="zoom-link" href="../assets/courtyard-study-1.webp" data-caption="Courtyard study · painting" aria-label="Enlarge: Courtyard study · painting">
+              <img class="" src="../assets/courtyard-study-1.webp" alt="Courtyard study · painting" width="1190" height="1684" loading="lazy">
+              <span class="zoom-indicator" aria-hidden="true">↗</span>
+            </a>
+          </figure>
+        </div>
+        <div class="source-links">
+          <a href="../assets/pdf/interior-study.pdf" target="_blank" rel="noopener">
+            Interior study PDF ↗
+          </a>
+          <a href="../assets/pdf/courtyard-study.pdf" target="_blank" rel="noopener">
+            Courtyard study PDF ↗
+          </a>
+        </div>
+      </section>
+      <nav class="project-pagination" aria-label="Project navigation">
+        <a href="../index.html#work">
+          ← Back to the collection
+        </a>
+      </nav>
+    </main>
+    <footer class="site-footer">
+      <div class="contact">
+        <p>
+          <a href="mailto:sdk9715@nyu.edu">
+            sdk9715@nyu.edu
+          </a>
+          <a href="https://www.linkedin.com/in/sia-kim9715/" target="_blank" rel="noopener noreferrer">
+            LinkedIn ↗
+          </a>
+          <a href="../assets/pdf/sia-kim-resume.pdf" download="Sia-Kim-Resume.pdf">
+            Download resume ↓
+          </a>
+        </p>
+      </div>
+    </footer>
+    <!-- A native dialog keeps keyboard focus inside the enlarged image. -->
+    <dialog class="image-viewer" aria-label="Enlarged project image">
+      <div class="viewer-bar">
+        <p id="viewer-caption">
+        </p>
+        <button type="button" class="viewer-close" aria-label="Close image">
+          Close ×
+        </button>
+      </div>
+      <div class="viewer-stage">
+        <img class="viewer-image" alt="">
+      </div>
+      <button type="button" class="viewer-zoom" aria-pressed="false">
+        Zoom in +
+      </button>
+      <div class="viewer-controls">
+        <button type="button" class="viewer-prev" aria-label="Previous image">
+          ← Previous
+        </button>
+        <span class="viewer-count" aria-live="polite">
+        </span>
+        <button type="button" class="viewer-next" aria-label="Next image">
+          Next →
+        </button>
+      </div>
+    </dialog>
+  </body>
+</html>

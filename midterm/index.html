@@ -1,124 +1,152 @@
 <!doctype html>
 <html lang="en">
-
-  <!-- Page settings and stylesheet -->
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Portfolio layout with placeholder content.">
-    <title>Sia Kim — Portfolio</title>
-    <link rel="stylesheet" href="style.css?v=resume-fix-4">
+    <meta name="description" content="Sia Kim's collection of graphic design, photography, artwork, and interactive projects.">
+    <meta name="theme-color" content="#fcf8f8">
+    <title>Portfolio — Sia Kim</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer>
+    </script>
   </head>
   <body>
-
-    <!-- Header and navigation links -->
+    <a class="skip-link" href="#main">
+      Skip to content
+    </a>
     <header class="site-header">
-      <a class="identity" href="#home">
-        <span>SIA KIM<br>PORTFOLIO</span>
+      <a class="identity" href="index.html">
+        SIA KIM
+        <span>PORTFOLIO</span>
       </a>
       <nav aria-label="Main navigation">
-        <a href="#work">Work</a>
-        <a href="#about">About</a>
-        <a href="#resume">Resume</a>
+        <a href="index.html#work">
+          Work
+        </a>
+        <a href="info.html">
+          Info
+        </a>
+        <a href="experience.html">
+          Experience
+        </a>
       </nav>
     </header>
-    <main>
-
-      <!-- Home -->
-      <section class="hero" id="home" aria-labelledby="hero-title">
-        <h1 id="hero-title">Sia Kim</h1>
-        <p class="hero-description">INTRODUCTION </p>
+    <main id="main">
+      <section class="hero" aria-labelledby="home-title">
+        <h1 id="home-title">Sia Kim</h1>
+        <p class="hero-line">
+          I’m passionate about design and the ways
+          <br>
+          images, ideas, and people connect
+        </p>
       </section>
-
-      <!-- Work: three project placeholders -->
-      <section class="work-grid" id="work" aria-label="Selected work">
-        <article class="project">
-          <div class="project-meta">
-            <span>01 / PROJECT</span>
-            <span>DATE </span>
-          </div>
-          <h2>Project title </h2>
-          <p class="tags">SKILLS / CATEGORY </p>
-          <details>
-            <summary>Project details <span>+</span>
-            </summary>
-            <div>
-              <p>Project description </p>
-            </div>
-          </details>
-        </article>
-        <article class="project">
-          <div class="project-meta">
-            <span>02 / PROJECT</span>
-            <span>DATE </span>
-          </div>
-          <h2>Project title </h2>
-          <p class="tags">SKILLS / CATEGORY </p>
-          <details>
-            <summary>Project details <span>+</span>
-            </summary>
-            <div>
-              <p>Project description </p>
-            </div>
-          </details>
-        </article>
-        <article class="project project-wide">
-          <div class="project-meta">
-            <span>03 / PROJECT</span>
-            <span>DATE </span>
-          </div>
-          <h2>Project title </h2>
-          <p class="tags">SKILLS / CATEGORY </p>
-          <details>
-            <summary>Project details <span>+</span>
-            </summary>
-            <div>
-              <p>Project description </p>
-            </div>
-          </details>
-        </article>
-      </section>
-
-      <!-- About -->
-      <section class="about" id="about">
-        <p class="section-label">02 / ABOUT</p>
-        <div>
-          <h2>About me</h2>
-          <p>About me </p>
+      <section class="work" id="work" aria-label="Portfolio work">
+        <div class="work-grid">
+          <article class="project" data-category="graphic">
+            <a class="project-link" href="projects/playing-cards.html" aria-label="View Playing cards">
+              <div class="cover cover-cards">
+                <img class="" src="assets/facecards-organic-square-1.webp" alt="Square character playing card" width="1260" height="1764" loading="eager">
+                <img class="" src="assets/facecards-triangle-circle-3.webp" alt="Triangular character playing card" width="1260" height="1764" loading="eager">
+                <img class="" src="assets/facecards-triangle-circle-6.webp" alt="Circular character playing card" width="1260" height="1764" loading="eager">
+              </div>
+            </a>
+          </article>
+          <article class="project" data-category="graphic">
+            <a class="project-link" href="projects/sky-high-diner.html" aria-label="View Sky High Diner">
+              <div class="cover cover-menu">
+                <img class="" src="assets/sky-high-menu-1.webp" alt="Sky High Diner illustrated menu" width="1800" height="1286" loading="eager">
+              </div>
+            </a>
+          </article>
+          <article class="project">
+            <a class="project-link" href="projects/graphics.html" aria-label="View Graphics">
+              <div class="cover">
+                <img src="assets/edm-board.webp" alt="Graphics for NYU EDM, KSEA and Kappa Phi Lambda" width="1080" height="1350" loading="lazy">
+              </div>
+            </a>
+          </article>
+          
+          
+          
+          
+          <article class="project" data-category="photo">
+            <a class="project-link" href="projects/photography.html" aria-label="View Through my lens">
+              <div class="cover cover-photo">
+                <img class="" src="assets/apc_0677.webp" alt="Looking down a bright stairwell" width="1800" height="1350" loading="lazy">
+              </div>
+            </a>
+          </article>
+          <article class="project" data-category="art">
+            <a class="project-link" href="projects/artwork.html" aria-label="View Drawings for fun">
+              <div class="cover cover-art">
+                <img class="" src="assets/courtyard-study-1.webp" alt="Painted courtyard with blue tiled roofs" width="1190" height="1684" loading="lazy">
+              </div>
+            </a>
+          </article>
+          <article class="project" data-category="interactive">
+            <a class="project-link" href="projects/rock-paper-scissors.html" aria-label="View Rock, paper, scissors">
+              <div class="cover cover-game">
+                <img class="" src="assets/game-start.webp" alt="Rock paper scissors start screen" width="430" height="888" loading="lazy">
+              </div>
+            </a>
+          </article>
+          <article class="project">
+            <a class="project-link" href="projects/sound-sphere.html" aria-label="Play Sound sphere">
+              <div class="cover">
+                <img src="assets/sound-sphere-preview.png" alt="Sound sphere interactive code project" width="1000" height="700" loading="lazy">
+              </div>
+            </a>
+          </article>
+          <article class="project">
+            <a class="project-link" href="projects/star-field.html" aria-label="Play Star field">
+              <div class="cover">
+                <img src="assets/star-field-preview.png" alt="Star field interactive code project" width="1000" height="700" loading="lazy">
+              </div>
+            </a>
+          </article>
         </div>
-      </section>
-
-      <!-- Resume -->
-      <section class="resume" id="resume">
-        <div class="section-heading">
-          <p class="section-label">03 / RESUME</p>
-          <h2>Experiences </h2>
-        </div>
-        <div class="resume-row">
-          <h3>Organization name</h3>
-          <p>Role </p>
-          <span>Date </span>
-        </div>
-        <div class="resume-row">
-          <h3>Organization name</h3>
-          <p>Role </p>
-          <span>Date </span>
-        </div>
-        <div class="resume-row">
-          <h3>Organization name</h3>
-          <p>Role </p>
-          <span>Date </span>
-        </div>
-        <p class="draft-note">Resume details </p>
       </section>
     </main>
-
-    <!-- Footer -->
-    <footer>
-      <p>SIA KIM PORTFOLIO</p>
-      <a href="#home" aria-label="Back to top">
-        <span>↑</span>
-      </a>
+    <footer class="site-footer">
+      <div class="contact">
+        <p>
+          <a href="mailto:sdk9715@nyu.edu">
+            sdk9715@nyu.edu
+          </a>
+          <a href="https://www.linkedin.com/in/sia-kim9715/" target="_blank" rel="noopener noreferrer">
+            LinkedIn ↗
+          </a>
+          <a href="assets/pdf/sia-kim-resume.pdf" download="Sia-Kim-Resume.pdf">
+            Download resume ↓
+          </a>
+        </p>
+      </div>
     </footer>
+    <!-- A native dialog keeps keyboard focus inside the enlarged image. -->
+    <dialog class="image-viewer" aria-label="Enlarged project image">
+      <div class="viewer-bar">
+        <p id="viewer-caption">
+        </p>
+        <button type="button" class="viewer-close" aria-label="Close image">
+          Close ×
+        </button>
+      </div>
+      <div class="viewer-stage">
+        <img class="viewer-image" alt="">
+      </div>
+      <button type="button" class="viewer-zoom" aria-pressed="false">
+        Zoom in +
+      </button>
+      <div class="viewer-controls">
+        <button type="button" class="viewer-prev" aria-label="Previous image">
+          ← Previous
+        </button>
+        <span class="viewer-count" aria-live="polite">
+        </span>
+        <button type="button" class="viewer-next" aria-label="Next image">
+          Next →
+        </button>
+      </div>
+    </dialog>
   </body>
 </html>
