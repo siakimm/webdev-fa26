@@ -34,4 +34,4 @@ Optimized assets folder size: [add size]
 
 ## Live Website
 
-[Add GitHub Pages URL]
+https://siakimm.github.io/Sia-portfolio/index.html
