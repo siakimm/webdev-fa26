@@ -2,18 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Geolocation</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-    <link rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        max-width: 700px;
+        margin: 40px auto;
+        padding: 0 20px;
+        text-align: center;
+        color: #1a1a1a;
+      }
 
+      h1 {
+        margin-bottom: 8px;
+      }
 
-    .subtitile{
+      .subtitle {
         color: #6b7280;
         margin-bottom: 32px;
-    }
+      }
 
     button {
         background-color: #3b82f6;
@@ -59,7 +73,7 @@
   </head>
   <body>
     <h1>Where am I?</h1>
-    <p class="subtitile">Click the button below to get your current location.</p>
+    <p class="subtitle">Click the button below to get your current location.</p>
     <button id="findMe">Get Location</button>
     <div id="result">Click the button above to get your location.</div>
 
