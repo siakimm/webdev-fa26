@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Local Storage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class=" container mt-5">
+        <h1>Hello <span id="user">World</span>!</h1>
+
+        <form id="userInfo" class="shadow-sm mb-5 p-3 bg bg-body-teriary rounded" >
+            <div class="form-floating mb-3">
+                <input
+                    type="text"
+                    class="form-control"
+                    name="firstName"
+                    id="firstName"
+                    placeholder="Your first name here"
+                />
+                <label for="firstName">Entere your first name</label>
+            </div>
+
+            <button id="nameSetBtn" type="button" class="btn btn-danger bth-lg">
+                Clear Current User
+            </button>
+        </form>
+
+        <script>
+            const saveUser = () => {
+                const name = document,getElementById('firstName').value
+                localStorage.firstName = name 
+        
+            /*
+            const localStorage = {
+                firstName: name
+            } 
+            */
+            window.location.reload()
+        }
+
+        const clearlocalStorage = () => {
+            localStorage.clear()
+            window.location.reload()
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document
+            .getElementById('nameSetBtn')
+            .addEventListener('click', function(e){
+               // e.preventDefault()
+               saveUser()
+            })
+
+            document
+            .getElementById('clearBtn')
+            .addEventListener('click', clearLocalStorage)
+
+            if (localStorage.firstName){
+                documet.getElementById('user').textContent = localStorage.firstName
+            }
+        })
+        </script>
+    </div>
+  </body>
+</html>

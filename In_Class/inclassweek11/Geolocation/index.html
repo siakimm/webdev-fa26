@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Geolocation</title>
+
+    <link rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+
+
+    .subtitile{
+        color: #6b7280;
+        margin-bottom: 32px;
+    }
+
+    button {
+        background-color: #3b82f6;
+        color: white;
+        border: none;
+        padding: 14px 28px;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: background-color 0.2s;
+    }
+
+    button:hover {
+        background-color: #2563eb;
+    }
+
+    #result {
+        margin-top: 24px;
+        padding: 20px;
+        border-radius: 8px;
+        background-color: #f3f4f6;
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    .details-table {
+        margin: 20px auto 0;
+        text-align: left;
+        border-collapse: collapse;
+
+    }
+
+    .details-table td {
+        padding: 8px 12px;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    .details-table td:first-child {
+        font-weight: bold;
+        color: #374151;
+        width: 40%;
+    }
+    </style>
+  </head>
+  <body>
+    <h1>Where am I?</h1>
+    <p class="subtitile">Click the button below to get your current location.</p>
+    <button id="findMe">Get Location</button>
+    <div id="result">Click the button above to get your location.</div>
+
+    <script>
+        let result
+
+        document.addEventListener('DOMContentLoaded', () =>{
+            document.getElementById('findMe').addEventListener('click', findMe)
+            result = document.getElementById('result')
+        })
+
+        const findMe = () => {
+
+            const result = document.getElementById('result')
+
+            result.textContent = 'Getting your location now...'
+
+            if(!('geolocation' in navigator)) {
+                result.textContent = 
+                    'Geolocation is not supported by your browser.'
+                return
+            }
+
+            navigator.geolocation.getCurrentPosition(onSuccess, onError)
+        }
+
+        const onSuccess = (position) => {
+            console.log(position.coords.latitude, position.coords.longitude)
+
+            const lat = position.coords.latitude
+            const lon = position.coords.longitude
+            const accuracy = position.coords.accuracy
+
+            let altitude = position.coords.altitude
+            let speed = position.coords.speed
+
+        result.innerHTML = `
+            <table class="details-table">
+                <tr>
+                    <th>Latitude;</th>
+                    <td>${lat}</td>
+                </tr>
+                <tr>
+                    <th>Longitude;</th>
+                    <td>${lon}</td>
+                </tr>
+                <tr>
+                    <th>Accuracy;</th>
+                    <td>${Math.round(accuracy)} meters</td>
+                </tr>
+                <tr>
+                    <th>Altitude;</th>
+                    <td>${altitude != null ? Math.round(altitude) + ' meters' : 'Not Available'}</td>
+                </tr>
+                <tr>
+                    <th>Speed;</th>
+                    <td>${speed != null ? Math.round(speed) + ' meters/second' : 'Not Available'}</td>
+                </tr>
+        </table>
+            `
+        }
+
+        const onError = (error) => {
+            const message = `Geolocation error: ${error.code} - ${error.message}`
+            console.warn(message)
+
+            result.textContent = message
+        }
+
+
+    </script>
+  </body>
+</html>
