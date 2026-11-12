@@ -10,7 +10,7 @@
     <div class=" container mt-5">
         <h1>Hello <span id="user">World</span>!</h1>
 
-        <form id="userInfo" class="shadow-sm mb-5 p-3 bg bg-body-teriary rounded" >
+        <form id="userInfo" class="shadow-sm mb-5 p-3 bg bg-body-teriary rounded">
             <div class="form-floating mb-3">
                 <input
                     type="text"
@@ -19,48 +19,41 @@
                     id="firstName"
                     placeholder="Your first name here"
                 />
-                <label for="firstName">Entere your first name</label>
+                <label for="firstName">Enter your first name</label>
             </div>
 
-            <button id="nameSetBtn" type="button" class="btn btn-danger bth-lg">
+            <button id="nameSetBtn" type="button" class="btn btn-primary btn-lg me-2">
+                Save Current User
+            </button>
+            <button id="clearBtn" type="button" class="btn btn-danger btn-lg">
                 Clear Current User
             </button>
         </form>
 
         <script>
             const saveUser = () => {
-                const name = document,getElementById('firstName').value
-                localStorage.firstName = name 
-        
-            /*
-            const localStorage = {
-                firstName: name
-            } 
-            */
-            window.location.reload()
-        }
+                const name = document.getElementById('firstName').value;
+                localStorage.setItem('firstName', name);
+                window.location.reload();
+            };
 
-        const clearlocalStorage = () => {
-            localStorage.clear()
-            window.location.reload()
-        }
+            const clearLocalStorage = () => {
+                localStorage.removeItem('firstName');
+                window.location.reload();
+            };
 
-        document.addEventListener('DOMContentLoaded', () => {
-            document
-            .getElementById('nameSetBtn')
-            .addEventListener('click', function(e){
-               // e.preventDefault()
-               saveUser()
-            })
+            document.addEventListener('DOMContentLoaded', () => {
+                const nameInput = document.getElementById('firstName');
+                const savedName = localStorage.getItem('firstName');
 
-            document
-            .getElementById('clearBtn')
-            .addEventListener('click', clearLocalStorage)
+                if (savedName) {
+                    nameInput.value = savedName;
+                    document.getElementById('user').textContent = savedName;
+                }
 
-            if (localStorage.firstName){
-                documet.getElementById('user').textContent = localStorage.firstName
-            }
-        })
+                document.getElementById('nameSetBtn').addEventListener('click', saveUser);
+                document.getElementById('clearBtn').addEventListener('click', clearLocalStorage);
+            });
         </script>
     </div>
   </body>
