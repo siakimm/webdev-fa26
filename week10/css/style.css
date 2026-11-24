@@ -1,0 +1,162 @@
+
+:root {
+  --paper: #fffaf6;
+  --pink: #be4b76;
+  --ink: #49313b;
+  --line: #e9c7d2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Arial, sans-serif;
+}
+
+.planner {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 20px;
+}
+
+h1, h2 {
+  font-family: Georgia, serif;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 48px;
+  color: var(--pink);
+  margin: 10px 0;
+}
+
+h2 {
+  font-size: 32px;
+  margin: 8px 0 16px;
+}
+
+.eyebrow, .tag, .footnote {
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.intro {
+  line-height: 1.6;
+}
+
+.day-card {
+  border: 1px solid var(--line);
+  background: white;
+  padding: 30px;
+  margin-top: 30px;
+}
+
+.tag {
+  color: var(--pink);
+  text-transform: uppercase;
+}
+
+#summary {
+  line-height: 1.6;
+}
+
+#stops {
+  padding: 0;
+  list-style: none;
+  margin: 25px 0;
+}
+
+#stops li {
+  padding: 13px;
+  border-bottom: 1px solid var(--line);
+}
+
+#stops li.odd {
+  background: #fff0f5;
+}
+
+.budget {
+  border-top: 2px solid var(--pink);
+  padding-top: 16px;
+}
+
+.total {
+  font-weight: bold;
+  font-size: 22px;
+  color: var(--pink);
+}
+
+.tip {
+  font-size: 13px;
+  color: #755866;
+}
+
+/* Controls */
+
+.controls {
+  margin-top: 30px;
+  padding: 25px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.controls h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.controls input {
+  padding: 10px;
+  margin: 10px;
+  width: 120px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+}
+
+.controls button {
+  padding: 12px 18px;
+  margin: 5px;
+  background: var(--pink);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.controls button:hover {
+  background: #9d345d;
+}
+
+.controls button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* For Mobile */
+
+@media (max-width: 600px) {
+  .planner {
+    margin: 20px auto;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  .day-card {
+    padding: 20px;
+  }
+
+  .controls {
+    padding: 15px;
+  }
+
+  .controls button {
+    margin: 5px 2px;
+  }
+}
